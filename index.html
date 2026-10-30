@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rubén Alberto Ramírez | Soluciones Tecnológicas y Capacitación</title>
+    <title>Rubén Alberto Ramírez | Capacitación y Software Social</title>
     <style>
         * {
             box-sizing: border-box;
@@ -20,12 +20,12 @@
 
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* --- ENCABEZADO Y MENÚ --- */
+        /* --- ENCABEZADO --- */
         header {
             background: #ffffff;
             padding: 20px 30px;
@@ -49,10 +49,8 @@
         .logo p {
             font-size: 13px;
             color: #64748b;
-            font-weight: 500;
         }
 
-        /* Menú superior */
         nav ul {
             list-style: none;
             display: flex;
@@ -62,7 +60,7 @@
 
         nav a {
             display: inline-block;
-            padding: 10px 18px;
+            padding: 8px 16px;
             background-color: #f1f5f9;
             color: #2563eb;
             text-decoration: none;
@@ -70,121 +68,285 @@
             font-size: 14px;
             font-weight: 600;
             transition: all 0.2s ease;
-            border: 1px solid #e2e8f0;
         }
 
         nav a:hover {
             background-color: #2563eb;
             color: #ffffff;
-            transform: translateY(-2px);
-            border-color: #2563eb;
         }
 
-        nav a.highlight {
-            background-color: #16a34a;
-            color: #ffffff;
-            border-color: #16a34a;
-        }
-
-        nav a.highlight:hover {
-            background-color: #15803d;
-        }
-
-        /* --- BANNER PRINCIPAL (HERO) --- */
+        /* --- HERO CON FOTO --- */
         .hero {
             background: linear-gradient(135deg, #0f172a, #1e293b);
             color: #ffffff;
-            padding: 60px 40px;
+            padding: 40px;
             border-radius: 16px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 30px;
             margin-bottom: 40px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+            flex-wrap: wrap;
         }
 
-        .hero h2 {
-            font-size: 34px;
-            margin-bottom: 15px;
-            color: #f8fafc;
-            font-weight: 700;
+        .hero-img-container {
+            flex: 0 0 160px;
+            text-align: center;
+            margin: 0 auto;
         }
 
-        .hero p {
-            font-size: 18px;
-            max-width: 750px;
-            margin: 0 auto 25px auto;
-            color: #94a3b8;
+        .hero-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #2563eb;
+            background-color: #334155;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 280px;
         }
 
         .hero-badge {
             display: inline-block;
             background-color: rgba(37, 99, 235, 0.2);
             color: #60a5fa;
-            padding: 6px 14px;
+            padding: 4px 12px;
             border-radius: 20px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             border: 1px solid rgba(96, 165, 250, 0.3);
         }
 
-        /* Pie de página */
+        .hero-text h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #f8fafc;
+        }
+
+        .hero-text p {
+            font-size: 16px;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        /* --- SECCIONES Y GRILLAS --- */
+        .section-title {
+            font-size: 22px;
+            color: #0f172a;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            width: fit-content;
+        }
+
+        .tag-blue { background: #dbeafe; color: #1e40af; }
+        .tag-green { background: #dcfce7; color: #166534; }
+        .tag-orange { background: #ffedd5; color: #9a3412; }
+
+        .btn-card {
+            display: inline-block;
+            text-align: center;
+            padding: 8px 14px;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .btn-card:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* --- TRAYECTORIA / CV --- */
+        .cv-box {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 40px;
+        }
+
+        .cv-list {
+            list-style: none;
+        }
+
+        .cv-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #334155;
+        }
+
+        .cv-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #16a34a;
+            font-weight: bold;
+        }
+
+        /* --- FOOTER --- */
         footer {
             text-align: center;
             padding: 20px;
             color: #64748b;
             font-size: 13px;
             border-top: 1px solid #e2e8f0;
-            margin-top: 40px;
         }
 
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: stretch;
-                text-align: center;
-            }
-            nav ul {
-                justify-content: center;
-                flex-direction: column;
-            }
-            nav a {
-                display: block;
-                width: 100%;
-                text-align: center;
-            }
+        @media (max-width: 600px) {
+            .hero { text-align: center; justify-content: center; }
+            header { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Encabezado y Menú -->
+        <!-- Encabezado -->
         <header>
             <div class="logo">
                 <h1>Rubén Alberto Ramírez</h1>
-                <p>Trelew, Chubut — Tecnología y Capacitación</p>
+                <p>Trelew, Chubut — Capacitación & Soluciones Digitales</p>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#descargas">Descargas y Apps</a></li>
-                    <li><a href="#capacitacion">Capacitación</a></li>
-                    <li><a href="#novedades">Novedades</a></li>
-                    <li><a href="#servicios" class="highlight">Servicios</a></li>
+                    <li><a href="#cursos">Cursos</a></li>
+                    <li><a href="#apps">Apps y Descargas</a></li>
+                    <li><a href="#sobre-mi">Trayectoria</a></li>
                 </ul>
             </nav>
         </header>
 
-        <!-- Banner Principal / Hero -->
-        <section class="hero" id="inicio">
-            <span class="hero-badge">Portal Oficial de Soluciones Útiles</span>
-            <h2>Tecnología práctica al servicio de la comunidad y emprendedores</h2>
-            <p>Capacitación en Excel, análisis de datos y desarrollo de herramientas de software enfocadas en resolver problemas reales del día a día.</p>
+        <!-- Presentación Principal (Hero) -->
+        <section class="hero">
+            <div class="hero-img-container">
+                <!-- Reemplazá 'foto-ruben.jpg' por el nombre de tu archivo de imagen -->
+                <img src="foto-ruben.jpg" alt="Rubén Alberto Ramírez" class="hero-img" onerror="this.src='https://via.placeholder.com/160?text=Ruben+Ramirez'">
+            </div>
+            <div class="hero-text">
+                <span class="hero-badge">Capacitación y Desarrollo Práctico</span>
+                <h2>Tecnología accesible y herramientas para la comunidad</h2>
+                <p>Formación particular y presencial en Trelew, desarrollo de aplicaciones para emprendedores locales y talleres de inclusión digital.</p>
+            </div>
         </section>
+
+        <!-- Sección Cursos y Capacitación -->
+        <h2 class="section-title" id="cursos">🎓 Capacitaciones y Cursos</h2>
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <span class="tag tag-blue">Presencial — Trelew</span>
+                    <h3>Excel y Análisis de Datos</h3>
+                    <p>Clases particulares e individuales orientadas a la práctica real. Desde manejo básico de planillas hasta fórmulas avanzadas y tableros de control.</p>
+                </div>
+                <a href="#contacto" class="btn-card">Consultar Horarios</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="tag tag-orange">Virtual / A distancia</span>
+                    <h3>Google Sheets y Automatización (VBA)</h3>
+                    <p>Capacitación personalizada en gestión de hojas de cálculo en la nube, macros y automatización de tareas repetitivas para negocios.</p>
+                </div>
+                <a href="#contacto" class="btn-card">Consultar Programa</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="tag tag-green">Comunitario / Voluntario</span>
+                    <h3>Autonomía Digital para Adultos Mayores</h3>
+                    <p>Talleres prácticos dictados en el Centro de Retirados de Trelew para el uso seguro de celulares, trámites online y herramientas digitales cotidianas.</p>
+                </div>
+                <a href="#contacto" class="btn-card">Más Información</a>
+            </div>
+        </div>
+
+        <!-- Sección Software y Apps -->
+        <h2 class="section-title" id="apps">📱 Aplicaciones y Aportes Comunitarios</h2>
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <span class="tag tag-green">App Destacada</span>
+                    <h3>Gestión para Feriantes y Emprendedores</h3>
+                    <p>Aplicación desarrollada en Python/Kivy para el control de stock, caja diaria y ventas en ferias. Funciona 100% sin conexión a internet.</p>
+                </div>
+                <a href="#" class="btn-card">Ver Detalles / Descargar</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="tag tag-blue">Recursos Gratuitos</span>
+                    <h3>Plantillas de Gestión en Excel</h3>
+                    <p>Modelos de planillas listos para usar: presupuestos, control de inventario simple y herramientas de cálculo para artesanos y comercios.</p>
+                </div>
+                <a href="#" class="btn-card">Explorar Descargas</a>
+            </div>
+        </div>
+
+        <!-- Trayectoria / Resumen de Perfil -->
+        <h2 class="section-title" id="sobre-mi">📄 Trayectoria y Formación</h2>
+        <div class="cv-box">
+            <ul class="cv-list">
+                <li><strong>Formación Técnica:</strong> Analista de Sistemas, Técnico en Estadística y Técnico Electromecánico.</li>
+                <li><strong>Docencia y Formación:</strong> Amplia experiencia en dictado de clases presenciales de ofimática, programación aplicada y herramientas digitales.</li>
+                <li><strong>Desarrollo de Software:</strong> Especializado en soluciones ágiles con Python, SQLite, VBA y automatización de datos.</li>
+                <li><strong>Acción Social:</strong> Colaboración activa y talleres de alfabetización digital para la tercera edad y ferias solidarias en Trelew.</li>
+            </ul>
+        </div>
 
         <!-- Pie de página -->
         <footer>
-            <p>&copy; 2026 - Rubén Alberto Ramírez | Diseñado a medida y sin ataduras.</p>
+            <p>&copy; 2026 - Rubén Alberto Ramírez | Trelew, Chubut</p>
         </footer>
     </div>
 
