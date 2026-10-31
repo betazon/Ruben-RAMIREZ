@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía de Conceptos Claves para Emprendedores Feriales</title>
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --card-bg: #1e293b;
+      --accent-green: #10b981;
+      --accent-blue: #3b82f6;
+      --accent-purple: #8b5cf6;
+      --accent-amber: #f59e0b;
+      --text-light: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border-radius: 12px;
+      border: 1px solid #334155;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: var(--accent-green);
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Navegación por Pestañas */
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      flex: 1;
+      min-width: 130px;
+      padding: 12px;
+      background: #1e293b;
+      color: var(--text-muted);
+      border: 1px solid #334155;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .tab-btn:hover {
+      background: #334155;
+      color: var(--text-light);
+    }
+
+    .tab-btn.active {
+      background: var(--accent-green);
+      color: #000;
+      border-color: var(--accent-green);
+    }
+
+    /* Contenido de secciones */
+    .section-content {
+      display: none;
+      background: var(--card-bg);
+      padding: 25px;
+      border-radius: 12px;
+      border: 1px solid #334155;
+      margin-bottom: 25px;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .section-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #334155;
+      font-size: 1.2rem;
+    }
+
+    /* Esquemas didácticos */
+    .diagram-container {
+      background: #0f172a;
+      border: 1px dashed #475569;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .diagram-step {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: #1e293b;
+      padding: 12px 15px;
+      border-radius: 6px;
+      border-left: 4px solid var(--accent-blue);
+    }
+
+    .diagram-step.producer { border-left-color: var(--accent-purple); }
+    .diagram-step.reseller { border-left-color: var(--accent-amber); }
+    .diagram-step.stock { border-left-color: var(--accent-green); }
+
+    .step-num {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: var(--accent-green);
+    }
+
+    .step-text h4 {
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+
+    .step-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .rule-box {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid var(--accent-green);
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+
+    .rule-box h4 {
+      color: var(--accent-green);
+      font-size: 0.95rem;
+      margin-bottom: 5px;
+    }
+
+    .rule-box p {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+
+    /* Cuadro comparativo */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 600px) {
+      .comparison-grid { grid-template-columns: 1fr; }
+    }
+
+    .comp-card {
+      background: #0f172a;
+      border: 1px solid #334155;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .comp-card h4 {
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .comp-card.productor h4 { color: var(--accent-purple); }
+    .comp-card.revendedor h4 { color: var(--accent-amber); }
+
+    .comp-card ul {
+      list-style-position: inside;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .comp-card ul li { margin-bottom: 5px; }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      border-top: 1px solid #334155;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>📚 Conceptos Claves de Gestión Ferial</h1>
+      <p>Entendé cómo funciona la aplicación para sacarle el máximo provecho a tu emprendimiento</p>
+    </header>
+
+    <!-- Navegación por pestañas -->
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('modos')">🎭 Modo Activo</button>
+      <button class="tab-btn" onclick="switchTab('insumos-prod')">📦 Insumos vs Productos</button>
+      <button class="tab-btn" onclick="switchTab('stock')">📊 Control de Stock</button>
+      <button class="tab-btn" onclick="switchTab('finanzas')">💰 Finanzas Básicas</button>
+    </div>
+
+    <!-- PESTAÑA 1: PRODUCTOR VS REVENDEDOR -->
+    <div id="tab-modos" class="section-content active">
+      <div class="section-title">
+        <span class="icon-badge">🎭</span>
+        <h3 style="color: var(--accent-purple);">¿Productor o Revendedor?</h3>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">
+        La app te permite cambiar entre dos modos de trabajo según la dinámica de tu emprendimiento:
+      </p>
+
+      <div class="comparison-grid">
+        <div class="comp-card productor">
+          <h4>🛠️ Modo Productor</h4>
+          <ul>
+            <li><strong>¿Qué es?</strong> Elaborás o fabricás lo que vendés (Panadería, Dulces, Cuero, Indumentaria).</li>
+            <li><strong>Manejo de Recetas:</strong> Necesitás registrar materias primas (insumos) para saber tu costo real.</li>
+            <li><strong>Paso a paso:</strong> Insumos ➔ Ficha Técnica / Receta ➔ Producto Final.</li>
+          </ul>
+        </div>
+
+        <div class="comp-card revendedor">
+          <h4>⚡ Modo Revendedor</h4>
+          <ul>
+            <li><strong>¿Qué es?</strong> Comprás productos terminados y los revendés directamente sin procesar.</li>
+            <li><strong>Sin Recetas:</strong> No cargás insumos ni fichas técnicas.</li>
+            <li><strong>Carga Rápida:</strong> Usás la grilla directa para ingresar código, costo de compra y precio de venta.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PESTAÑA 2: INSUMOS VS PRODUCTO -->
+    <div id="tab-insumos-prod" class="section-content">
+      <div class="section-title">
+        <span class="icon-badge">🧪</span>
+        <h3 style="color: var(--accent-blue);">Diferencia entre Insumo y Producto</h3>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">
+        Para calcular bien tus costos en el modo Productor, es fundamental separar la materia prima del artículo final:
+      </p>
+
+      <div class="diagram-container">
+        <div class="diagram-step producer">
+          <div class="step-num">1. INSUMOS</div>
+          <div class="step-text">
+            <h4>Materia Prima o Ingredientes</h4>
+            <p>Son los elementos que comprás para elaborar. Ej: Harina, Azúcar, Cueros, Hilos, Frascos, Remaches.</p>
+          </div>
+        </div>
+
+        <div style="text-align: center; color: var(--accent-purple); font-weight: bold; font-size: 1.2rem;">⬇️ (Se unen mediante la Receta / Escandallo)</div>
+
+        <div class="diagram-step producer">
+          <div class="step-num">2. PRODUCTO</div>
+          <div class="step-text">
+            <h4>El Artículo Terminado para la Venta</h4>
+            <p>Es lo que exponés en la mesa del puesto. Ej: Budín de Manzana, Alfajor de Chocolate, Cinto de Cuero.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PESTAÑA 3: CONTROL DE STOCK -->
+    <div id="tab-stock" class="section-content">
+      <div class="section-title">
+        <span class="icon-badge">📦</span>
+        <h3 style="color: var(--accent-green);">¿Cómo Funciona el Control de Stock?</h3>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">
+        Entender sobre qué elementos llevás el control evita sorpresas durante las jornadas de feria:
+      </p>
+
+      <div class="diagram-container">
+        <div class="diagram-step stock">
+          <div class="step-num">🏷️</div>
+          <div class="step-text">
+            <h4>El Control de Stock Principal es sobre el PRODUCTO</h4>
+            <p>Es la cantidad de artículos elaborados o listos para vender que tenés en stock en la feria.</p>
+          </div>
+        </div>
+        <div class="diagram-step stock">
+          <div class="step-num">🔄</div>
+          <div class="step-text">
+            <h4>Descuento Automático de Insumos al Vender</h4>
+            <p>Cada vez que registrás una venta, la aplicación automáticamente descuenta la unidad vendida del producto Y ADEMÁS descuenta de tu stock las proporciones exactas de insumos indicadas en la receta.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rule-box">
+        <h4>💡 La Regla de Oro del Feriante</h4>
+        <p>Mantener tus insumos actualizados te permite usar la <strong>Calculadora de Lotes</strong> para saber exactamente cuántos productos podés fabricar con la materia prima que tenés en stock antes de ir a comprar más.</p>
+      </div>
+    </div>
+
+    <!-- PESTAÑA 4: FINANZAS BÁSICAS -->
+    <div id="tab-finanzas" class="section-content">
+      <div class="section-title">
+        <span class="icon-badge">💰</span>
+        <h3 style="color: var(--accent-amber);">Educación Financiera Ferial</h3>
+      </div>
+
+      <div class="rule-box" style="border-color: var(--accent-amber); background: rgba(245, 158, 11, 0.1);">
+        <h4 style="color: var(--accent-amber);">⚠️ VENDER NO ES GANAR</h4>
+        <p>El total de dinero que entra en la caja durante la feria se divide en dos partes:</p>
+      </div>
+
+      <div class="diagram-container" style="margin-top: 15px;">
+        <div class="diagram-step reseller">
+          <div class="step-num">1. COSTO</div>
+          <div class="step-text">
+            <h4>Recupero de Insumos y Materiales</h4>
+            <p>Es la parte del dinero que debes guardar para volver a comprar la materia prima usada. ¡No es dinero libre!</p>
+          </div>
+        </div>
+
+        <div class="diagram-step reseller">
+          <div class="step-num">2. GANANCIA</div>
+          <div class="step-text">
+            <h4>Tu Utilidad Limpia (Ganancia Real)</h4>
+            <p>Es la diferencia sobrante entre el Precio de Venta y el Precio de Costo. Este sí es el valor generado por tu trabajo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Sistema de Gestión Ferial Colaborativa • Diseñado para la Comunidad de Emprendedores de Trelew
+    </footer>
+  </div>
+
+  <script>
+    function switchTab(tabId) {
+      // Ocultar todos los contenidos
+      const contents = document.querySelectorAll('.section-content');
+      contents.forEach(c => c.classList.remove('active'));
+
+      // Desactivar todos los botones
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+
+      // Activar la pestaña elegida
+      document.getElementById('tab-' + tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
+```
+
+---
+
+### Resumen de la Guía Interactiva Creada:
+1. **Diferencia Productor / Revendedor:** Explica por qué el modo productor usa recetas/insumos y el modo revendedor usa la grilla rápida sin recetas.
+2. **Concepto Insumo vs Producto:** Aclara visualmente el flujo de conversión desde la materia prima hasta la unidad de venta.
+3. **Control de Stock Dinámico:** Explica la "Regla de Oro": el stock principal es sobre el producto, pero al registrar una venta se descuentan automáticamente tanto el producto como los insumos de la receta.
+4. **Educación Financiera Integrada:** Aclara la distinción fundamental entre "Total Vendido" (ingreso) y "Ganancia Limpia".
+
+Esta página se puede incluir dentro del propio sitio web o abrirse en formato *modal/ventana flotante* antes de pasar al manual operativo. ¿Te parece bien este diseño conceptual?
