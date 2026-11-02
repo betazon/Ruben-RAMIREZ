@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Excel — Aprendé por temas | Rubén Alberto Ramírez</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Encabezado */
+        header {
+            background: #ffffff;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-bottom: 3px solid #2563eb;
+        }
+
+        .logo h1 {
+            font-size: 22px;
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        .logo p {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #f1f5f9;
+            color: #2563eb;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        nav a:hover {
+            background-color: #2563eb;
+            color: #ffffff;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #ffffff;
+            padding: 35px 30px;
+            border-radius: 16px;
+            margin-bottom: 35px;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #f8fafc;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: #94a3b8;
+            max-width: 800px;
+        }
+
+        /* Secciones por Clase */
+        .class-group {
+            margin-bottom: 40px;
+        }
+
+        .class-title {
+            font-size: 20px;
+            color: #0f172a;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            width: fit-content;
+        }
+
+        .card h3 {
+            font-size: 17px;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        .btn-card {
+            display: inline-block;
+            text-align: center;
+            padding: 8px 14px;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn-card:hover {
+            background-color: #1d4ed8;
+        }
+
+        .btn-disabled {
+            background-color: #cbd5e1;
+            color: #64748b;
+            cursor: not-allowed;
+        }
+
+        .btn-disabled:hover {
+            background-color: #cbd5e1;
+        }
+
+        /* Banner de WhatsApp */
+        .whatsapp-banner {
+            background: #dcfce7;
+            border: 1px solid #86efac;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .whatsapp-banner h3 {
+            color: #14532d;
+            margin-bottom: 8px;
+        }
+
+        .whatsapp-banner p {
+            color: #166534;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .btn-ws {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #16a34a;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .btn-ws:hover {
+            background-color: #15803d;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            font-size: 13px;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Encabezado -->
+        <header>
+            <div class="logo">
+                <h1>Manual de Excel — Aprendé por temas</h1>
+                <p>Clases particulares y soporte guiado — Rubén Alberto Ramírez</p>
+            </div>
+            <nav>
+                <a href="index.html">← Volver al Inicio</a>
+            </nav>
+        </header>
+
+        <!-- Banner Principal -->
+        <section class="hero">
+            <h2>Paso a paso, a tu propio ritmo</h2>
+            <p>Elegí el tema que necesitás revisar. Cada lección incluye una explicación sencilla y cotidiana, un video corto explicativo, un ejemplo resuelto y un pequeño desafío para poner en práctica.</p>
+        </section>
+
+        <!-- CLASE 1: PRIMEROS PASOS -->
+        <section class="class-group">
+            <h2 class="class-title">📌 Clase 1: Primeros pasos e Interfaz</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <div>
+                        <span class="card-tag">Clase 1</span>
+                        <h3>¿Qué es una celda?</h3>
+                        <p>El elemento fundamental donde cargás datos, valores o fórmulas.</p>
+                    </div>
+                    <a href="tema-celda.html" class="btn-card">Ver Lección</a>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">Clase 1</span>
+                        <h3>¿Qué es una dirección de celda?</h3>
+                        <p>Cómo ubicar cualquier casillero mediante columnas y filas.</p>
+                    </div>
+                    <a href="tema-direccion.html" class="btn-card">Ver Lección</a>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">Clase 1</span>
+                        <h3>¿Qué es un rango?</h3>
+                        <p>Aprender a agrupar y seleccionar varias celdas a la vez.</p>
+                    </div>
+                    <a href="tema-rango.html" class="btn-card">Ver Lección</a>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">Clase 1</span>
+                        <h3>Filas y Columnas</h3>
+                        <p>Estructura general de la planilla de cálculo.</p>
+                    </div>
+                    <a href="#" class="btn-card btn-disabled">Próximamente</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CLASE 2: FUNCIONES BÁSICAS Y ESTADÍSTICAS -->
+        <section class="class-group">
+            <h2 class="class-title">📊 Clase 2: Funciones Estadísticas Básicas</h2>
+            <div class="grid">
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">Clase 2</span>
+                        <h3>Función SUMA</h3>
+                        <p>Suma rápida de planillas y totales administrativos.</p>
+                    </div>
+                    <a href="#" class="btn-card btn-disabled">Próximamente</a>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <span class="card-tag">Clase 2</span>
+                        <h3>Función CONTAR.SI</h3>
+                        <p>Contar elementos que cumplen una condición especificada.</p>
+                    </div>
+                    <a href="#" class="btn-card btn-disabled">Próximamente</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Banner de Contacto WhatsApp -->
+        <div class="whatsapp-banner">
+            <h3>¿Tenés dudas con algún ejercicio?</h3>
+            <p>Escribime directo para ayudarte a resolver los desafíos o coordinar nuestras clases presenciales.</p>
+            <a href="https://wa.me/549TU_NUMERO_AQUI" class="btn-ws" target="_blank">Consultá por WhatsApp</a>
+        </div>
+
+        <!-- Pie de página -->
+        <footer>
+            <p>&copy; 2026 - Rubén Alberto Ramírez | Trelew, Chubut</p>
+        </footer>
+    </div>
+
+</body>
+</html>

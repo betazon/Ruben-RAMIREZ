@@ -1,0 +1,171 @@
+{
+  "titulo_prompt": "Armar el Manual de Excel por temas para el sitio de Rubén Alberto Ramírez",
+  "rol": "Sos un desarrollador web experto en HTML, CSS y JavaScript simples, y un diseñador de contenido educativo. Escribís en español rioplatense claro, cálido y sin tecnicismos innecesarios, pensando en alumnos principiantes.",
+  "objetivo": "Agregar al sitio que ya está funcionando un Manual de Excel organizado por TEMAS (no por número de clase). Cada tema tiene su propia página con la misma estructura: texto corto, video de YouTube incrustado, ejemplo y práctica. Cada tema lleva una etiqueta chica que indica a qué clase pertenece (por ejemplo 'Clase 1'), pero la navegación principal es por tema.",
+  "sitio_existente": {
+    "hosting": "GitHub Pages (sitio estático, solo HTML, CSS y JavaScript, sin servidor)",
+    "archivos_actuales": ["index.html", "emprendedores.html", "guia.html", "foto-ruben.jpg"],
+    "importante": "No modifiques ni reescribas los archivos existentes, salvo agregar UN enlace nuevo en index.html hacia manual.html (indicá exactamente en qué lugar y con qué código)."
+  },
+  "estilo_visual": {
+    "regla": "Usar el mismo estilo de index.html y emprendedores.html para que todo se vea como un solo sitio.",
+    "tipografia": "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+    "colores": {
+      "fondo_pagina": "#f8fafc",
+      "texto": "#1e293b",
+      "texto_secundario": "#64748b",
+      "azul_principal": "#2563eb",
+      "azul_hover": "#1d4ed8",
+      "verde": "#16a34a",
+      "verde_hover": "#15803d",
+      "borde_tarjetas": "#e2e8f0"
+    },
+    "componentes": "Encabezado blanco con borde inferior de color y botón 'Volver', tarjetas blancas con borde redondeado y sombra suave, botones redondeados, pie de página con '© 2026 - Rubén Alberto Ramírez | Trelew, Chubut'.",
+    "responsive": "Debe verse bien en celular (la mayoría de los alumnos lo van a abrir desde el teléfono). Contenedor de ancho máximo 1100px, grillas con auto-fit, videos que se adapten al ancho."
+  },
+  "reglas_generales": [
+    "Todo en archivos HTML con CSS dentro de la propia página (como los archivos actuales). Sin frameworks ni librerías externas.",
+    "Código limpio y comentado en español, para que pueda copiarlo y modificarlo sin ayuda.",
+    "Textos en español rioplatense (vos, tenés, podés), sin jerga complicada.",
+    "No inventes datos de contacto, teléfonos ni enlaces reales. Usá marcadores claros como TU_NUMERO_AQUI y VIDEO_ID_AQUI.",
+    "Cada página de tema debe ser una copia de la misma plantilla, cambiando solo el contenido.",
+    "Los videos se incrustan con iframe de youtube-nocookie.com y con atributo title descriptivo.",
+    "Accesibilidad básica: etiquetas alt, contraste suficiente, tamaño de letra cómodo (mínimo 16px en el texto principal)."
+  ],
+  "archivos_a_generar": [
+    {
+      "archivo": "manual.html",
+      "descripcion": "Página principal del manual. Muestra los temas como botones/tarjetas agrupados por clase."
+    },
+    {
+      "archivo": "plantilla-tema.html",
+      "descripcion": "Plantilla vacía y comentada para copiar cada vez que se agregue un tema nuevo. Marcar con comentarios HTML dónde va cada bloque."
+    },
+    {
+      "archivo": "tema-celda.html",
+      "descripcion": "Página terminada del tema 'Qué es una celda', usando la plantilla y el contenido de ejemplo."
+    },
+    {
+      "archivo": "tema-direccion.html",
+      "descripcion": "Página terminada del tema 'Qué es una dirección de celda'."
+    },
+    {
+      "archivo": "tema-rango.html",
+      "descripcion": "Página terminada del tema 'Qué es un rango'."
+    }
+  ],
+  "pagina_principal_manual": {
+    "encabezado": "Manual de Excel — Aprendé por temas",
+    "bajada": "Elegí el tema que necesitás. Cada uno tiene una explicación corta, un video y un ejemplo para practicar.",
+    "organizacion": "Los temas aparecen como tarjetas con botón. Están agrupados por clase con un subtítulo (por ejemplo 'Clase 1: Primeros pasos'), pero cada tarjeta muestra primero el nombre del tema y recién después una etiqueta chica con la clase.",
+    "extras": [
+      "Botón 'Volver al inicio' hacia index.html.",
+      "Botón 'Consultá por WhatsApp' con enlace https://wa.me/549TU_NUMERO_AQUI (marcador, sin inventar número).",
+      "Los temas que todavía no tengan página deben verse como 'Próximamente' y sin enlace activo."
+    ]
+  },
+  "estructura_pagina_tema": [
+    {
+      "orden": 1,
+      "bloque": "Encabezado de navegación",
+      "detalle": "Botones 'Volver al Manual' y, si corresponde, 'Tema anterior' / 'Tema siguiente'."
+    },
+    {
+      "orden": 2,
+      "bloque": "Etiqueta de clase",
+      "detalle": "Una etiqueta chica y de color (por ejemplo 'Clase 1') arriba del título. Es un dato secundario."
+    },
+    {
+      "orden": 3,
+      "bloque": "Título del tema",
+      "detalle": "Una pregunta o nombre simple, por ejemplo '¿Qué es una celda?'."
+    },
+    {
+      "orden": 4,
+      "bloque": "Concepto",
+      "detalle": "Explicación corta en 2 a 4 párrafos o con una lista. Lenguaje simple y un ejemplo cotidiano."
+    },
+    {
+      "orden": 5,
+      "bloque": "Video",
+      "detalle": "Video corto de YouTube incrustado (iframe responsive 16:9) con el texto 'Mirá la explicación en video'. Usar VIDEO_ID_AQUI como marcador."
+    },
+    {
+      "orden": 6,
+      "bloque": "Ejemplo",
+      "detalle": "Un ejemplo concreto, con una tabla HTML simple que imite una planilla cuando ayude a entender."
+    },
+    {
+      "orden": 7,
+      "bloque": "Para practicar",
+      "detalle": "Una consigna corta que el alumno pueda hacer solo en Excel."
+    },
+    {
+      "orden": 8,
+      "bloque": "Pie de la página",
+      "detalle": "Botón 'Consultá por WhatsApp' y pie de página del sitio."
+    }
+  ],
+  "temas": [
+    {
+      "clase": "Clase 1",
+      "nombre_clase": "Primeros pasos",
+      "temas": [
+        { "id": "celda", "titulo": "¿Qué es una celda?" },
+        { "id": "direccion", "titulo": "¿Qué es una dirección de celda?" },
+        { "id": "rango", "titulo": "¿Qué es un rango?" },
+        { "id": "filas-columnas", "titulo": "Filas y columnas" },
+        { "id": "interfaz", "titulo": "La interfaz de Excel" },
+        { "id": "barra-formulas", "titulo": "La barra de fórmulas" },
+        { "id": "hojas-libros", "titulo": "Hojas y libros" },
+        { "id": "empezar-formula", "titulo": "Cómo empieza una fórmula" },
+        { "id": "operadores", "titulo": "Operadores básicos" },
+        { "id": "tipos-datos", "titulo": "Tipos de datos" },
+        { "id": "copiar-formula", "titulo": "Cómo copiar una fórmula" }
+      ]
+    },
+    {
+      "clase": "Clase 2",
+      "nombre_clase": "Primeras funciones (agrupación a confirmar por el autor)",
+      "temas": [
+        { "id": "suma", "titulo": "Función SUMA" },
+        { "id": "promedio", "titulo": "Función PROMEDIO" },
+        { "id": "si", "titulo": "Función SI" },
+        { "id": "contar-si", "titulo": "Función CONTAR.SI" },
+        { "id": "buscarv", "titulo": "Función BUSCARV" }
+      ]
+    }
+  ],
+  "contenido_de_ejemplo": [
+    {
+      "id": "celda",
+      "clase": "Clase 1",
+      "titulo": "¿Qué es una celda?",
+      "concepto": "Una celda es el cuadradito donde se cruzan una fila y una columna. Ahí escribís datos (números, textos, fechas) o fórmulas. Una planilla de Excel está formada por miles de celdas.",
+      "ejemplo": "La celda donde escribís tu nombre, o el precio de un producto, es una celda más de la planilla.",
+      "practica": "Abrí Excel, hacé clic en una celda cualquiera y escribí tu nombre. Después apretá Enter y fijate cómo se pasa a la celda de abajo."
+    },
+    {
+      "id": "direccion",
+      "clase": "Clase 1",
+      "titulo": "¿Qué es una dirección de celda?",
+      "concepto": "Es el nombre de la celda: la letra de su columna seguida del número de su fila. Siempre se dice primero la letra y después el número.",
+      "ejemplo": "B3 es la celda de la columna B, fila 3. Al hacer clic en una celda, su dirección aparece en el cuadro de nombres, arriba a la izquierda.",
+      "practica": "Hacé clic en distintas celdas y mirá cómo cambia la dirección en el cuadro de nombres. Después escribí tu nombre en la celda D5."
+    },
+    {
+      "id": "rango",
+      "clase": "Clase 1",
+      "titulo": "¿Qué es un rango?",
+      "concepto": "Un rango es un grupo de celdas juntas. Se escribe con la primera y la última celda separadas por dos puntos. También existen rangos rectangulares, que abarcan varias filas y columnas.",
+      "ejemplo": "B3:B10 son todas las celdas de la columna B desde la fila 3 hasta la 10. A1:C5 es un bloque de 3 columnas por 5 filas.",
+      "practica": "Seleccioná con el mouse un grupo de celdas y fijate en el cuadro de nombres: Excel te muestra la dirección del rango seleccionado (por ejemplo, la cantidad de filas y columnas)."
+    }
+  ],
+  "formato_de_respuesta": [
+    "Entregá el código COMPLETO de cada archivo, uno por uno, en bloques de código separados, con el nombre del archivo como título.",
+    "Al final, indicá el código del enlace a agregar en index.html y en qué sección ubicarlo.",
+    "Explicá en pocas líneas, y en lenguaje simple, cómo agregar un tema nuevo copiando plantilla-tema.html.",
+    "Si algo del pedido no está claro, hacé como máximo una pregunta antes de generar el código."
+  ]
+}

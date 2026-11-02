@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TITULO DE LA PAGINA -->
+    <title>TITULO_DEL_TEMA | Manual de Excel — Rubén Alberto Ramírez</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Encabezado y Navegación */
+        header {
+            background: #ffffff;
+            padding: 15px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-nav {
+            padding: 8px 14px;
+            background-color: #f1f5f9;
+            color: #2563eb;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn-nav:hover {
+            background-color: #2563eb;
+            color: #ffffff;
+        }
+
+        /* Tarjeta Contenedora Principal */
+        .content-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 30px;
+        }
+
+        .badge-class {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1e40af;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 26px;
+            color: #0f172a;
+            margin-bottom: 20px;
+        }
+
+        .section-block {
+            margin-bottom: 30px;
+        }
+
+        .section-block h2 {
+            font-size: 18px;
+            color: #2563eb;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #eff6ff;
+            padding-bottom: 5px;
+        }
+
+        .section-block p {
+            font-size: 15px;
+            color: #334155;
+            margin-bottom: 10px;
+        }
+
+        /* Video Contenedor Responsive 16:9 */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #000;
+            margin-top: 15px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Tabla de Ejemplo */
+        .excel-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .excel-table th, .excel-table td {
+            border: 1px solid #cbd5e1;
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        .excel-table th {
+            background-color: #f1f5f9;
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        .excel-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        /* Bloque de Desafío / Práctica */
+        .practice-box {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #16a34a;
+        }
+
+        .practice-box h3 {
+            color: #166534;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .practice-box p {
+            color: #15803d;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        .whatsapp-banner {
+            text-align: center;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 30px;
+        }
+
+        .btn-ws {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #16a34a;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- BLOQUE 1: Encabezado de Navegación -->
+        <header>
+            <div class="nav-buttons">
+                <a href="manual.html" class="btn-nav">← Volver al Manual</a>
+            </div>
+            <div class="nav-buttons">
+                <!-- Cambiar o quitar según el tema -->
+                <a href="TEMA_ANTERIOR.html" class="btn-nav">← Anterior</a>
+                <a href="TEMA_SIGUIENTE.html" class="btn-nav">Siguiente →</a>
+            </div>
+        </header>
+
+        <article class="content-card">
+            <!-- BLOQUE 2: Etiqueta de Clase -->
+            <span class="badge-class">Clase NOMBRE_DE_CLASE</span>
+
+            <!-- BLOQUE 3: Título del Tema -->
+            <h1>TITULO_DEL_TEMA</h1>
+
+            <!-- BLOQUE 4: El Concepto -->
+            <section class="section-block">
+                <h2>💡 El Concepto (¿Para qué sirve?)</h2>
+                <p>EXPLICACION_CORTA_DEL_CONCEPTO</p>
+                <p>ANALOGIA_O_EJEMPLO_COTIDIANO</p>
+            </section>
+
+            <!-- BLOQUE 5: Video de Explicación -->
+            <section class="section-block">
+                <h2>🎥 Mirá la explicación en video</h2>
+                <p>Acompañá la lectura con este video corto explicativo:</p>
+                <div class="video-container">
+                    <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID_AQUI" title="Explicación en video de TITULO_DEL_TEMA" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <!-- BLOQUE 6: Ejemplo Resuelto -->
+            <section class="section-block">
+                <h2>📝 Ejemplo Resuelto</h2>
+                <p>DESCRIPCION_DEL_EJEMPLO</p>
+                <!-- Opcional: Tabla HTML que imita Excel -->
+                <table class="excel-table">
+                    <thead>
+                        <tr>
+                            <th>Columna A</th>
+                            <th>Columna B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dato 1</td>
+                            <td>Dato 2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- BLOQUE 7: Desafío para el Alumno -->
+            <section class="practice-box">
+                <h3>✏️ Desafío para el Alumno</h3>
+                <p>INSTRUCCION_DE_LA_PRACTICA</p>
+            </section>
+        </article>
+
+        <!-- BLOQUE 8: Pie de Página y Consultas -->
+        <div class="whatsapp-banner">
+            <p><strong>¿Tenés dudas con este tema?</strong> Escribime directamente para resolverlo juntos.</p>
+            <a href="https://wa.me/549TU_NUMERO_AQUI" class="btn-ws" target="_blank">Consultá por WhatsApp</a>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 - Rubén Alberto Ramírez | Trelew, Chubut</p>
+        </footer>
+    </div>
+
+</body>
+</html>
